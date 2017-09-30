@@ -10,30 +10,26 @@ var Route = router.Route;
 //  Include the IndexRoute (catch-all route)
 var IndexRoute = router.IndexRoute;
 
+var browserHistory = router.browserHistory;
+
 // Include the Router component
 var Router = router.Router;
 
 // Reference the high-level components
-var Banner = require("../components/Banner");
-var Carousel = require("../components/Carousel");
-var User = require("../components/User");
-var Preferences = require("../components/Preferences");
-var Subscription = require("../components/Subscription");
-var Footer = require("../components/Footer");
-
+var Landing = require("../components/Landing");
+var Login = require("../components/Login");
+var Main = require("../components/Main");
 
 // Export the Routes
 module.exports = (
   // High level component is the Router component.
   <Router history={browserHistory}>
-    <Route path="/" component={Main}>
+    <Route path="/" component={Landing}>
 
-      {/* If user selects Search or Saved show the appropriate component */}
-      <Route path="Search" component={Search} />
-      <Route path="Saved" component={Saved} />
+      <Route path="Login" component={Login} />
 
       {/* If user selects any other path... we get the Home Route */}
-      <IndexRoute component={Search} />
+      <IndexRoute component={Landing} />
 
     </Route>
   </Router>

@@ -1,7 +1,6 @@
 // Include React as a dependency
 var React = require("react");
 // Including the Link component from React Router to navigate within our application without full page reloads
-// https://github.com/ReactTraining/react-router/blob/master/docs/API.md#link
 var Link = require("react-router").Link;
 
 // Create the Main component
@@ -28,7 +27,7 @@ var Main = React.createClass({
                   <span className="icon-bar"></span>
                   <span className="icon-bar"></span>
                 </button>
-                <Link className="navbar-brand" to="/">NYT-React</Link>
+                <Link className="navbar-brand" to="/">The Fun Factory</Link>
               </div>
 
               <div className="collapse navbar-collapse navbar-ex1-collapse">
