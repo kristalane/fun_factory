@@ -4,7 +4,7 @@ var React = require("react");
 var Link = require("react-router").Link;
 
 // Create the Main component
-var Main = React.createClass({
+var Landing = React.createClass({
 
   render: function() {
 
@@ -62,4 +62,4 @@ var Main = React.createClass({
 });
 
 // Export the module back to the route
-module.exports = Main;
+module.exports = Landing;
