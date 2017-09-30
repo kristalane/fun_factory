@@ -36,17 +36,17 @@ app.use(function(req, res, next) {
 });
 
 
-// // MongoDB Configuration configuration
-// mongoose.connect("#");
-// var db = mongoose.connection;
-//
-// db.on("error", function(err) {
-//   console.log("Mongoose Error: ", err);
-// });
-//
-// db.once("open", function() {
-//   console.log("Mongoose connection successful.");
-// });
+// MongoDB Configuration configuration
+mongoose.connect("MONGODB_URI: mongodb://heroku_0j7dknlc:38p3r307cqfd648rm62ufg5qsi@ds157624.mlab.com:57624/heroku_0j7dknlc");
+var db = mongoose.connection;
+
+db.on("error", function(err) {
+  console.log("Mongoose Error: ", err);
+});
+
+db.once("open", function() {
+  console.log("Mongoose connection successful.");
+});
 
 
 // //now we can set the route path & initialize the API
