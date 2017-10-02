@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import AppBarExampleIcon from './components/navbar';
-import AutoCarousel from './components/carousel';
+import AppBarExampleIcon from './components/Navbar';
+import AutoCarousel from './components/Carousel';
 import Login from './login';
 
 class App extends Component {

@@ -8,7 +8,7 @@ export default class AppRoutes extends Component {
     return (
       <Router>
         <Route path="/" component={Landing} />
-        <Route path="/login" component={Login} />
+        <Route path="/login" component={Googlog} />
       </Router>
     )
   }

@@ -4,9 +4,11 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongoose = require ('mongoose');
 
-var index = require('./routes/index');
-var users = require('./routes/users');
+var index = require('./APIroutes/index');
+var users = require('./APIroutes/users');
+var login = require('./APIroutes/login');
 
 var app = express();
 
@@ -45,15 +47,18 @@ app.use(function(err, req, res, next) {
 });
 
 // MongoDB Configuration configuration
-mongoose.connect("MONGODB_URI: mongodb://heroku_0j7dknlc:38p3r307cqfd648rm62ufg5qsi@ds157624.mlab.com:57624/heroku_0j7dknlc");
-var db = mongoose.connection;
-
-db.on("error", function(err) {
-  console.log("Mongoose Error: ", err);
+var promise = mongoose.connect("mongodb://heroku_0j7dknlc:38p3r307cqfd648rm62ufg5qsi@ds157624.mlab.com:57624/heroku_0j7dknlc", {
+  useMongoClient: true,
 });
 
-db.once("open", function() {
-  console.log("Mongoose connection successful.");
+promise.then(function(db) {
+  db.on("error", function(err) {
+    console.log("Mongoose Error: ", err);
+  });
+
+  db.once("open", function() {
+    console.log("Mongoose connection successful.");
+  });
 });
 
 
