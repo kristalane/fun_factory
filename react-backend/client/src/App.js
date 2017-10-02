@@ -2,8 +2,7 @@ import React, {Component} from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBarExampleIcon from './components/navbar';
 import AutoCarousel from './components/carousel';
-import GoogleLogin from 'react-google-login';
-import responseGoogle from './login';
+import Login from './login';
 
 class App extends Component {
   state = {users: []}
@@ -28,9 +27,9 @@ class App extends Component {
 
 const Mui = () => (
   <MuiThemeProvider>
-    <AppBarExampleIcon />
-    <AutoCarousel />
-    <GoogleLogin />
+    {/* <AppBarExampleIcon /> */}
+    {/* <AutoCarousel /> */}
+    <Login />
   </MuiThemeProvider>
 );
 

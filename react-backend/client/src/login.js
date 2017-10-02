@@ -1,12 +1,30 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-
-const responseGoogle = (response) => {
-  render() {
-    return (
-    <div>something should render here
-    </div>)
+import { GoogleLogin } from 'react-google-login-component';
+ 
+class Login extends React.Component{
+ 
+  constructor (props, context) {
+    super(props, context);
   }
-};
-
-export default responseGoogle;
+ 
+  responseGoogle (googleUser) {
+    var id_token = googleUser.getAuthResponse().id_token;
+    console.log({accessToken: id_token});
+    //anything else you want to do(save to localStorage)...
+  }
+ 
+  render () {
+    return (
+      <div>
+        <GoogleLogin socialId="yourClientID"
+                     className="google-login"
+                     scope="profile"
+                     responseHandler={this.responseGoogle}
+                     buttonText="Login With Google"/>
+      </div>
+    );
+  }
+ 
+}
+ 
+export default Login;
