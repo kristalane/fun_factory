@@ -1,24 +1,13 @@
 // Include the React library
-var React = require("react");
+import React from "react";
 
 // Include the react-router module
-var router = require("react-router");
-
-// Include the Route component
-var Route = router.Route;
-
-//  Include the IndexRoute (catch-all route)
-var IndexRoute = router.IndexRoute;
-
-var browserHistory = router.browserHistory;
-
-// Include the Router component
-var Router = router.Router;
+import {Router, Route, browserHistory, IndexRoute} from "react-router";
 
 // Reference the high-level components
-var Landing = require("../components/Landing");
-var Login = require("../components/Login");
-var Main = require("../components/Main");
+import Landing from "Landing";
+import Login from "Login";
+import Main from "Main";
 
 // Export the Routes
 module.exports = (
