@@ -1,7 +1,7 @@
 // Include React as a dependency
-var React = require("react");
+import React from "react";
 // Including the Link component from React Router to navigate within our application without full page reloads
-var Link = require("react-router").Link;
+import Link from "react-router";
 
 // Create the Main component
 var Landing = React.createClass({
