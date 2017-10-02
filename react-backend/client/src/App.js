@@ -35,3 +35,20 @@ const Mui = () => (
 );
 
 export default Mui;
+
+
+// from jayson's sample folder
+// import React, { Component } from 'react';
+// import logo from './logo.svg';
+// import './App.css';
+// import AppRoutes from './config/AppRoutes'
+//
+// class App extends Component {
+//   render() {
+//     return (
+//       <AppRoutes />
+//     );
+//   }
+// }
+//
+// export default App;
