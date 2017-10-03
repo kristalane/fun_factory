@@ -19,7 +19,7 @@ var helpers = {
     // Run a query using Axios. Then return the results as an object with an array.
     // See the Axios documentation for details on how we structured this with the params.
     return axios.get("http://numbersapi.com/number/type", {
-      params: {
+      params: {/..
         "q": formattedTerm,
         "begin_date": formattedStart,
         "end_date": formattedEnd

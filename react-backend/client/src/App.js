@@ -27,8 +27,8 @@ class App extends Component {
 
 const Mui = () => (
   <MuiThemeProvider>
-    {/* <AppBarExampleIcon /> */}
-    {/* <AutoCarousel /> */}
+    <AppBarExampleIcon />
+    <AutoCarousel />
     <Login />
   </MuiThemeProvider>
 );
