@@ -18,16 +18,16 @@ var Router = router.Router;
 var browserHistory = router.browserHistory;
 
 // Reference the high-level components
-var Landing = require("../components/Landing");
-var Main = require("../components/Main.js");
-var Saved = require("../components/Saved");
+import Landing from "../components/Landing";
+import Main from "../components/Main";
+import Saved  from "../components/Saved";
 
 
 // Export the Routes
 module.exports = (
   // High level component is the Router component.
   <Router history={browserHistory}>
-    <Route path="/" component={Landing}>
+    <Route path="/" component={App}>
 
       {/* If user selects Search or Saved show the appropriate component */}
       <Route path="Main" component={Main} />
