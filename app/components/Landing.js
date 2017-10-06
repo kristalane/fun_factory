@@ -1,5 +1,5 @@
 // Include React as a dependency
-var React = require("react");
+import React from "react";
 
 // Create the Search component
 var Search = React.createClass({
