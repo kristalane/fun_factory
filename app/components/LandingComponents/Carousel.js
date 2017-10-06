@@ -1,15 +1,13 @@
 import React from 'react';
-import { Router, Route, Switch } from 'react-router';
 import { AutoRotatingCarousel, Slide } from 'material-auto-rotating-carousel';
 import { green400, green600, blue400, blue600, red400, red600 } from 'material-ui/styles/colors';
 
 
 const AutoCarousel = () => (
   <div>
-
     <AutoRotatingCarousel
       label="Get started"
-      onStart = "/login"
+      // onStart = "/login"
       open
       // TODO: onStart= redirect to login page
     >
