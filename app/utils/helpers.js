@@ -1,7 +1,8 @@
 // Include the Axios library for HTTP requests
-import axios from "axios";
+var axios = require("axios");
 
-var APIKey = "#";
+// NYT API Key (Replace with your own API Key)
+var APIKey = "9b3adf57854f4a19b7b5782cdd6e427a";
 
 // Helper Functions
 var helpers = {
@@ -18,8 +19,9 @@ var helpers = {
     console.log("Query Run");
     // Run a query using Axios. Then return the results as an object with an array.
     // See the Axios documentation for details on how we structured this with the params.
-    return axios.get("http://numbersapi.com/number/type", {
+    return axios.get("https://api.nytimes.com/svc/search/v2/articlesearch.json", {
       params: {
+        "api-key": APIKey,
         "q": formattedTerm,
         "begin_date": formattedStart,
         "end_date": formattedEnd
