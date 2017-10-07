@@ -19,7 +19,7 @@ var Facts = React.createClass({
 
     return (
       <div className="main-container">
-          <p>Hey, I'm a fact component</p>
+          <p>Hey, I'm a fact component that would totally work if I added my API results here. For now, you'll have to visit /api/numFacts</p>
       </div>
     );
   }

@@ -5,7 +5,7 @@ var React = require("react");
 var Link = require("react-router").Link;
 var helpers = require("../utils/helpers");
 var Facts = require("./Main/Facts");
-var Results = require("./Main/Results");
+// var Results = require("./Main/Results");
 
 // Create the Main component
 var Main = React.createClass({
@@ -40,18 +40,18 @@ var Main = React.createClass({
         </nav>
         {/* Jumbotron */}
         <div className="jumbotron">
-          <h2 className="text-center"><strong>(ReactJS) Fun Fact Shop</strong></h2>
-          <h3 className="text-center">Search for and save fun facts of interest.</h3>
+          <h2 className="text-center"><strong>(ReactJS) Fun FACT-ory</strong></h2>
+          <h3 className="text-center">See and save fun facts of interest. Spice up your next meeting, speech or curious exploration!</h3>
         </div>
 
         {/* Note how we pass the runQuery function to enable Facts to perform searches */}
         <Facts updateSearch={this.facts} />
-        <Results update={this.results} />
+        {/* <Results update={this.results} /> */}
         <footer>
           <hr />
           <p className="pull-right">
             <i className="fa fa-github" aria-hidden="true"></i>
-            Proudly built using React.js
+            Proudly got to this point using React.js
           </p>
         </footer>
 
