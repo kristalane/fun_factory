@@ -38,7 +38,16 @@ db.once("open", function() {
 // -------------------------------------------------
 // calling our NumbersAPI.
 app.get("/api/numFacts", function(req, response){
-  const factUrl = "http://numbersapi.com/" + "30/" + "trivia";
+
+  // helper function getRandomInt to find a random integer, set to rand, which we will use for the api call. In future developments this could be a user-inputted field.
+  function getRandomInt(min, max) {
+  let rand = Math.floor(Math.random() * (max - min)) + min;
+  return rand;
+  }
+
+  let rand = getRandomInt(2, 500);
+
+  const factUrl = "http://numbersapi.com/" + "" + rand + "" + "/" + "trivia";
     http.get(factUrl, res => {
       res.setEncoding("utf8");
       let body = "";
@@ -46,7 +55,7 @@ app.get("/api/numFacts", function(req, response){
         body += data;
       });
       res.on("end", () => {
-        console.log("this is a fact" + body);
+        console.log("this is a fact: " + body);
         response.send(body);
       });
   });
