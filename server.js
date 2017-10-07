@@ -85,7 +85,7 @@ app.delete("/api/saved/", function(req, res) {
 
 // Any non API GET routes will be directed to our React App and handled by React Router
 app.get("*", function(req, res) {
-  res.sendFile(__dirname + "/public/bundle.js");
+  res.sendFile(__dirname + "/public/index.html");
 });
 
 
