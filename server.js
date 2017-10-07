@@ -37,10 +37,10 @@ db.once("open", function() {
 
 // -------------------------------------------------
 
-// Route to get all saved articles
+// Route to get all saved preferences
 app.get("/api/saved", function(req, res) {
 
-  Article.find({})
+  Preferences.find({})
     .exec(function(err, doc) {
 
       if (err) {
@@ -52,13 +52,13 @@ app.get("/api/saved", function(req, res) {
     });
 });
 
-// Route to add an article to saved list
+// Route to add a preference to saved list
 app.post("/api/saved", function(req, res) {
-  var newArticle = new Article(req.body);
+  var newPreferences = new Preferences(req.body);
 
   console.log(req.body);
 
-  newArticle.save(function(err, doc) {
+  newPreferences.save(function(err, doc) {
     if (err) {
       console.log(err);
     }
@@ -68,12 +68,12 @@ app.post("/api/saved", function(req, res) {
   });
 });
 
-// Route to delete an article from saved list
+// Route to delete a preference from saved list
 app.delete("/api/saved/", function(req, res) {
 
   var url = req.param("url");
 
-  Article.find({ url: url }).remove().exec(function(err) {
+  Preferences.find({ url: url }).remove().exec(function(err) {
     if (err) {
       console.log(err);
     }
