@@ -13,7 +13,7 @@ var Router = router.Router;
 var browserHistory = router.browserHistory;
 
 // Reference the high-level components
-var Landing = require("../components/Landing");
+// var Landing = require("../components/Landing");
 var Main = require("../components/Main");
 var Saved = require("../components/Saved");
 
@@ -25,8 +25,8 @@ module.exports = (
     <Route path="/" component={Main}>
 
       {/* If user selects Search or Saved show the appropriate component */}
-      <Route path="Landing" component={Landing} />
-      <Route path="Saved" component={Saved} />
+      {/* <Route path="/Landing" component={Landing} /> */}
+      <Route path="/Saved" component={Saved} />
 
       {/* If user selects any other path... we get the Home Route */}
       <IndexRoute component={Main} />
