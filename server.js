@@ -3,6 +3,7 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var logger = require("morgan");
 var mongoose = require("mongoose");
+var http = require("http");
 
 // Require Schemas
 var Preferences = require("./server/model");
@@ -34,8 +35,37 @@ db.once("open", function() {
   console.log("Mongoose connection successful.");
 });
 
-
 // -------------------------------------------------
+// calling our NumbersAPI.
+app.get("/api/numFacts", function(req, response){
+  const factUrl = "http://numbersapi.com/" + "30/" + "trivia";
+    http.get(factUrl, res => {
+      res.setEncoding("utf8");
+      let body = "";
+      res.on("data", data => {
+        body += data;
+      });
+      res.on("end", () => {
+        console.log("this is a fact" + body);
+        response.send(body);
+      });
+  });
+});
+
+app.post("/api/facts", function(req, res){
+  const newFacts = new Facts(req.body);
+
+  console.log(req.body);
+
+  newFacts.save(function(err, doc){
+    if (err) {
+      console.log(err);
+    }
+    else {
+      res.send(doc);
+    }
+  });
+});
 
 // Route to get all saved preferences
 app.get("/api/saved", function(req, res) {
@@ -54,7 +84,7 @@ app.get("/api/saved", function(req, res) {
 
 // Route to add a preference to saved list
 app.post("/api/saved", function(req, res) {
-  var newPreferences = new Preferences(req.body);
+  const newPreferences = new Preferences(req.body);
 
   console.log(req.body);
 
