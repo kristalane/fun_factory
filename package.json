@@ -4,7 +4,7 @@
   "description": "",
   "engines":{
     "node": "7.8.0"
-  }
+  },
   "main": "server.js",
   "dependencies": {
     "body-parser": "^1.15.1",
